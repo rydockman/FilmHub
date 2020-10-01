@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio Item - MyPortfolio</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBGwuHyvMG1kncGJ37ovkWPiKP1h0p_1pg",
+        authDomain: "cse-201-project.firebaseapp.com",
+        databaseURL: "https://cse-201-project.firebaseio.com",
+        projectId: "cse-201-project",
+        storageBucket: "cse-201-project.appspot.com",
+        messagingSenderId: "105143926651",
+        appId: "1:105143926651:web:996ec825feb3f5bb4b87de",
+        measurementId: "G-6RMK1WGRZ0"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+  
+    </script>
+  <script src="js/Person.js"></script>
+  <script src="js/User.js"></script>
+  <script src="js/Genre.js"></script>
+  <script src="js/Director.js"></script>
+  <script src="js/Movie.js"></script>
+  <script src="js/Actor/Actor.js"></script>
+  <script src="js/Firebase/FirebaseManager.js"></script>
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Raleway:400,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+    <div class="container py-2 py-md-5">
+      <div class="row align-items-start">
+        <div class="col-md-2">
+          <ul class="custom-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a>Movies</a></li>
+            <li><a>Actors</a></li>
+            <li><a>Film Festivals</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li id="SignedInAs"><a>Signed In As: Guest</a></li>
+            <script>
+                if(sessionStorage.getItem('userName') != null) {
+                  document.getElementById("SignedInAs").innerHTML = "<a>Signed In As: " + sessionStorage.getItem('userName') + "</a>"
+                }
+            </script>
+          </ul>
+        </div>
+       
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="navbar navbar-light custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">FilmHub.</a>
+
+      <a href="#" class="burger" data-toggle="collapse" data-target="#main-navbar">
+        <span></span>
+      </a>
+
+    </div>
+  </nav>
+
+
+
+  <main id="main">
+
+    <div class="site-section site-portfolio">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-md-12 col-lg-8 mb-5 mb-lg-0" data-aos="fade-up">
+            <h2 id="error">Error 404: Page not found</h2>
+            <h4>Are you sure you clicked the correct thing?</h4>
+            <a href="index.html" class="readmore">Return Home</a>
+            <p class="mb-0"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="mb-1">&copy; Copyright FilmHub. All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/jquery/jquery-migrate.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendor/easing/easing.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+  <script src="vendor/isotope/isotope.pkgd.min.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

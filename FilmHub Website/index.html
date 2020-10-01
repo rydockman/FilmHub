@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta charset="utf-8">
+  <title>FilmHub</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <script src="js/Person.js"></script>
+  <script src="js/Genre.js"></script>
+  <script src="js/Director.js"></script>
+  <script src="js/Movie.js"></script>
+  <script src="js/Actor/Actor.js"></script>
+  <script src="js/Firebase/firebaseManager.js"></script>
+  <script src="js/add-genres.js"></script>
+  <script src="js/add-movies.js"></script>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBGwuHyvMG1kncGJ37ovkWPiKP1h0p_1pg",
+      authDomain: "cse-201-project.firebaseapp.com",
+      databaseURL: "https://cse-201-project.firebaseio.com",
+      projectId: "cse-201-project",
+      storageBucket: "cse-201-project.appspot.com",
+      messagingSenderId: "105143926651",
+      appId: "1:105143926651:web:996ec825feb3f5bb4b87de",
+      measurementId: "G-6RMK1WGRZ0"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    var fireMan = new FirebaseManager();
+
+  </script>
+</head>
+
+<body>
+  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+    <div class="container py-2 py-md-5">
+      <div class="row align-items-start">
+        <div class="col-md-2">
+          <ul class="custom-menu">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a>Movies</a></li>
+            <li><a>Actors</a></li>
+            <li><a>Upcoming Festivals</a></li>
+            <li><a id="change-theme">Change Theme</a></li>
+            <script>
+              const toggle = document.getElementById("change-theme").addEventListener("click", function () {
+                const all = document.querySelectorAll('*');
+                all.forEach((item => {
+                  item.classList.toggle('darkTheme');
+                }))
+              })
+            </script>
+            <li><a href="login.html">Login</a></li>
+            <li id="SignedInAs"><a>Signed In As: Guest</a></li>
+            <script>
+                if(sessionStorage.getItem('userName') != null) {
+                  console.log("Here")
+                  document.getElementById("SignedInAs").innerHTML = "<a href='user-template.html'>Signed In As: " + sessionStorage.getItem('userName') + "</a>"
+                }
+            </script>
+          </ul>
+        </div>
+        <div class="col-md-6 d-none d-md-block  mr-auto">
+          <div class="tweet d-flex">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-light custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">FilmHub.</a>
+
+      <a href="#" class="burger" data-toggle="collapse" data-target="#main-navbar">
+        <span></span>
+      </a>
+
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="site-section site-portfolio">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+            <h2>Search for your favorites</h2>
+            <p class="mb-0"></p>
+          </div>
+          <div class="col-md-12 col-lg-7 text-left text-lg-right" data-aos="fade-up" data-aos-delay="100">
+            <div id="filters" class="filters">
+              <a href="#" data-filter="*" class="active">All Categories</a>
+              <a href="#" data-filter=".movie">Movies</a>
+              <a href="#" data-filter=".genre">Genres</a>
+              <a href="#" data-filter=".actor">Actors</a>
+              <a href="#" data-filter=".director">Directors</a>
+              <a href="#" data-filter=".festivals">Festivals</a>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; padding: 15px;">
+          <button class="readmore" onclick="goToRequestMovie()">Request movie to be added </button>
+          <script>
+            function goToRequestMovie() {
+              if(sessionStorage.getItem('uid') != null) {
+                window.location.replace('requestmovie.html')
+              } else {
+                window.alert("You must be signed in to request a movie!")
+              }
+            }
+          </script>
+        </div>
+        <!-- Movies : movie  Genres : genre  Actors : actor    Directors : director-->
+        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+          <div class="item director col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="movie-template.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>James Cameron</h3>
+                <span>Avatar</span>
+              </div>
+              <img class="img-fluid" src="https://cdn.britannica.com/84/160284-050-695B1DE3/James-Cameron-2012.jpg">
+            </a>
+          </div>
+
+          <div class="item actor col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="movie-template.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Henrey Cavill</h3>
+                <span>Mission: Impossible</span>
+                <span>Fallout</span>
+              </div>
+              <img class="img-fluid"
+                src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Henry_Cavill_by_Gage_Skidmore_2.jpg">
+            </a>
+          </div>
+          <div class="item actor col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="movie-template.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Tom Cruise</h3>
+                <span>Mission: Impossible</span>
+                <span>Fallout</span>
+              </div>
+              <img class="img-fluid"
+                src="https://cdn.pinkvilla.com/files/styles/contentpreview/public/happy_birthday_tom_cruise_0_0_0.jpg?itok=t6aXUstx">
+            </a>
+          </div>
+          <div class="item festivals col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="movie-template.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Cleveland International Film Festival</h3>
+                <span>Canceled due to COVID-19</span>
+              </div>
+              <img class="img-fluid"
+                src="https://storage.googleapis.com/ff-storage-p01/festivals/logos/000/006/798/large/logo.jpg?1565728075">
+            </a>
+          </div>
+          <div class="item actor col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="movie-template.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Sam Worthington</h3>
+                <span>Avatar</span>
+              </div>
+              <img class="img-fluid"
+                src="https://cdn.onebauer.media/one/empire-tmdb/people/65731/profiles/9XzAE3ZnCnazub4xrSY8YBN7sNq.jpg?quality=50&width=1000&ratio=1-1&resizeStyle=aspectfit&format=jpg">
+            </a>
+          </div>
+          <div class="item actor col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="movie-template.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Zoe Saldana</h3>
+                <span>Avatar</span>
+              </div>
+              <img class="img-fluid"
+                src="https://vignette.wikia.nocookie.net/sonicw/images/0/0f/Zoe_Saldana_by_Gage_Skidmore_2.jpg/revision/latest?cb=20190525033544">
+            </a>
+          </div>
+          <div class="item director col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="movie-template.html" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>Christopher McQuarrie</h3>
+                <span>Mission: Impossible</span>
+                <span>Fallout</span>
+              </div>
+              <img class="img-fluid"
+                src="https://cdn1.thr.com/sites/default/files/2013/08/christopher_mcquarrie_a_p.jpg">
+            </a>
+          </div>
+          <!-- Add items JS Files   -->
+          <script>addMovies()</script>
+          <script>addGenre()</script>
+        </div>
+      </div>
+    </div>
+ 
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="mb-1">&copy; Copyright FilmHub.</p>
+        </div>
+        <div class="col-sm-6 social text-md-right">
+          <a href="#"><span class="icofont-twitter"></span></a>
+          <a href="#"><span class="icofont-facebook"></span></a>
+          <a href="#"><span class="icofont-dribbble"></span></a>
+          <a href="#"><span class="icofont-behance"></span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/jquery/jquery.min.js" defer></script>
+    <script src="vendor/jquery/jquery-migrate.min.js" defer></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js" defer></script>
+    <script src="vendor/easing/easing.min.js" defer></script>
+    <script src="vendor/php-email-form/validate.js" defer></script>
+    <script src="vendor/isotope/isotope.pkgd.min.js" defer></script>
+    <script src="vendor/aos/aos.js" defer></script>
+    <script src="vendor/owlcarousel/owl.carousel.min.js" defer></script>
+  
+    <!-- Template Main JS File -->
+    <script src="js/main.js" defer></script>
+  
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Raleway:400,700&display=swap"
+      rel="stylesheet">
+  
+    <!-- Bootstrap CSS File -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+    <link href="vendor/aos/aos.css" rel="stylesheet">
+    <link href="vendor/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" type="text/css" href="css/style.css?v1.9">
+</html>

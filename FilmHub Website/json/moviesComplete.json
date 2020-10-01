@@ -1,0 +1,229 @@
+{
+    "items": [
+        {
+            "rank": "1",
+            "title": "The Shawshank Redemption",
+            "year": "1994",
+            "image": "https://imdb-api.com/images/original/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Frank Darabont",
+            "cast": ["Tim Robbins", " Morgan Freeman"],
+            "genre":  ["Drama"]
+        },
+        {
+            "rank": "2",
+            "title": "The Godfather",
+            "year": "1972",
+            "image": "https://imdb-api.com/images/original/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.7015_AL_.jpg",
+            "director": "Francis Ford Coppola",
+            "cast": ["Marlon Brando", "Al Pacino"],
+            "genre": ["Crime", "Drama"]
+        },
+        {
+            "rank": "3",
+            "title": "The Godfather: Part II",
+            "year": "1974",
+            "image": "https://imdb-api.com/images/original/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.7015_AL_.jpg",
+            "director": "Francis Ford Coppola",
+            "cast": ["Al Pacino", "Robert De Niro"],
+            "genre": ["Crime", "Drama"]
+        },
+        {
+            "rank": "4",
+            "title": "The Dark Knight",
+            "year": "2008",
+            "image": "https://imdb-api.com/images/original/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Christopher Nolan",
+            "cast": ["Christian Bale", "Heath Ledger"],
+            "genre": ["Action", "Crime, Drama"]
+        },
+        {
+            "rank": "5",
+            "title": "12 Angry Men",
+            "year": "1957",
+            "image": "https://imdb-api.com/images/original/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Sidney Lumet",
+            "cast": ["Henry Fonda", "Lee J. Cobb"],
+            "genre": ["Drama"]
+        },
+        {
+            "rank": "6",
+            "title": "Schindler's List",
+            "year": "1993",
+            "image": "https://imdb-api.com/images/original/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Steven Spielberg",
+            "cast": ["Liam Neeson", "Ralph Fiennes"],
+            "genre": ["Biography", "Drama", "History"]
+        },
+        {
+            "rank": "7",
+            "title": "The Lord of the Rings: The Return of the King",
+            "year": "2003",
+            "image": "https://imdb-api.com/images/original/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Peter Jackson",
+            "cast": ["Elijah Wood", "Viggo Mortensen"],
+            "genre": ["Adventure", "Drama", "Fantasy"]
+        },
+        {
+            "rank": "8",
+            "title": "Pulp Fiction",
+            "year": "1994",
+            "image": "https://imdb-api.com/images/original/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Quentin Tarantino",
+            "cast": ["John Travolta", "Uma Thurman"],
+            "genre":  ["Crime", "Drama"]
+        },
+        {
+            "rank": "9",
+            "title": "The Good, the Bad and the Ugly",
+            "year": "1966",
+            "image": "https://imdb-api.com/images/original/MV5BOTQ5NDI3MTI4MF5BMl5BanBnXkFtZTgwNDQ4ODE5MDE@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Sergio Leone",
+            "cast": ["Clint Eastwood", "Eli Wallach"],
+            "genre":  ["Western"]
+        },
+        {
+            "rank": "10",
+            "title": "The Lord of the Rings: The Fellowship of the Ring",
+            "year": "2001",
+            "image": "https://imdb-api.com/images/original/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Peter Jackson",
+            "cast": ["Elijah Wood", "Ian McKellen"],
+            "genre": ["Action", "Adventure", "Drama"]
+        },
+        {
+            "rank": "11",
+            "title": "Fight Club",
+            "year": "1999",
+            "image": "https://imdb-api.com/images/original/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.6716_AL_.jpg",
+            "director": "David Fincher",
+            "cast": ["Brad Pitt", "Edward Norton"],
+            "genre": ["Drama"]
+        },
+        {
+            "rank": "12",
+            "title": "Forrest Gump",
+            "year": "1994",
+            "image": "https://imdb-api.com/images/original/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Robert Zemeckis",
+            "cast": ["Tom Hanks", "Robin Wright"],
+            "genre": ["Drama", "Romance"]
+        },
+        {
+            "rank": "13",
+            "title": "Inception",
+            "year": "2010",
+            "image": "https://imdb-api.com/images/original/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Christopher Nolan",
+            "cast": ["Leonardo DiCaprio", "Joseph Gordon-Levitt"],
+            "genre": ["Action", "Adventure", "Sci-Fi"]
+        },
+        {
+            "rank": "14",
+            "title": "Star Wars: Episode V - The Empire Strikes Back",
+            "year": "1980",
+            "image": "https://imdb-api.com/images/original/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Irvin Kershner",
+            "cast": ["Mark Hamill", "Harrison Ford"],
+            "genre": ["Action", "Adventure", "Fantasy"]
+        },
+        {
+            "rank": "15",
+            "title": "The Lord of the Rings: The Two Towers",
+            "year": "2002",
+            "image": "https://imdb-api.com/images/original/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Peter Jackson",
+            "cast": ["Elijah Wood", "Ian McKellen"],
+            "genre": ["Adventure", "Drama", "Fantasy"]
+        },
+        {
+            "rank": "16",
+            "title": "The Matrix",
+            "year": "1999",
+            "image": "https://imdb-api.com/images/original/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Lana Wachowski",
+            "cast": ["Keanu Reeves", "Laurence Fishburne"],
+            "genre": ["Action", "Sci-Fi"]
+        },
+        {
+            "rank": "17",
+            "title": "Goodfellas",
+            "year": "1990",
+            "image": "https://imdb-api.com/images/original/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Martin Scorsese",
+            "cast": ["Robert De Niro", "Ray Liotta"],
+            "genre": ["Biography", "Crime", "Drama"]
+        },
+        {
+            "rank": "18",
+            "title": "One Flew Over the Cuckoo's Nest",
+            "year": "1975",
+            "image": "https://imdb-api.com/images/original/MV5BZjA0OWVhOTAtYWQxNi00YzNhLWI4ZjYtNjFjZTEyYjJlNDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Milos Forman",
+            "cast": ["Jack Nicholson", "Louise Fletcher"],
+            "genre": ["Drama"]
+        },
+        {
+            "rank": "19",
+            "title": "Seven Samurai",
+            "year": "1954",
+            "image": "https://imdb-api.com/images/original/MV5BODdlYjU1Y2MtMWUxMy00YjJjLTgyMWItNzgzZmZkNTYxNWFkXkEyXkFqcGdeQXVyMTAwMjU1MzA2._V1_Ratio0.6716_AL_.jpg",
+            "director": "Akira Kurosawa",
+            "cast": ["Toshir Mifune", "Takashi Shimura"],
+            "genre": ["Action", "Adventure", "Drama"]
+        },
+        {
+            "rank": "20",
+            "title": "Se7en",
+            "year": "1995",
+            "image": "https://imdb-api.com/images/original/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_Ratio0.6716_AL_.jpg",
+            "director": "David Fincher",
+            "cast": ["Morgan Freeman", "Brad Pitt"],
+            "genre": ["Crime", "Drama", "Mystery"]
+        },
+        {
+            "rank": "21",
+            "title": "City of God",
+            "year": "2002",
+            "image": "https://imdb-api.com/images/original/MV5BNDJiNTEwMjMtOGQ1ZC00OTczLWFjZjctZWQ0MGJjZmFkMjcwXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Fernando Meirelles",
+            "cast": ["Alexandre Rodrigues", "Leandro Firmino"],
+            "genre": ["Crime", "Drama"]
+        },
+        {
+            "rank": "22",
+            "title": "Life Is Beautiful",
+            "year": "1997",
+            "image": "https://imdb-api.com/images/original/MV5BYmJmM2Q4NmMtYThmNC00ZjRlLWEyZmItZTIwOTBlZDQ3NTQ1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Roberto Benigni",
+            "cast": ["Roberto Benigni", "Nicoletta Braschi"],
+            "genre": ["Comedy", "Drama", "Romance"]
+        },
+        {
+            "rank": "23",
+            "title": "The Silence of the Lambs",
+            "year": "1991",
+            "image": "https://imdb-api.com/images/original/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Jonathan Demme",
+            "cast": ["Jodie Foster", "Anthony Hopkins"],
+            "genre": ["Crime", "Drama", "Thriller"]
+        },
+        {
+            "rank": "24",
+            "title": "It's a Wonderful Life",
+            "year": "1946",
+            "image": "https://imdb-api.com/images/original/MV5BZjc4NDZhZWMtNGEzYS00ZWU2LThlM2ItNTA0YzQ0OTExMTE2XkEyXkFqcGdeQXVyNjUwMzI2NzU@._V1_Ratio0.6716_AL_.jpg",
+            "director": "Frank Capra",
+            "cast": ["James Stewart", "Donna Reed"],
+            "genre": ["Drama", "Family", "Fantasy"]
+        },
+        {
+            "rank": "25",
+            "title": "Star Wars: Episode IV - A New Hope",
+            "year": "1977",
+            "image": "https://imdb-api.com/images/original/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.6716_AL_.jpg",
+            "director": "George Lucas",
+            "cast": ["Mark Hamill", "Harrison Ford"],
+            "genre": ["Action", "Adventure", "Fantasy"]
+        }
+    ]
+}

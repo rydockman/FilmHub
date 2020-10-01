@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Admin Page</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+            <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBGwuHyvMG1kncGJ37ovkWPiKP1h0p_1pg",
+                authDomain: "cse-201-project.firebaseapp.com",
+                databaseURL: "https://cse-201-project.firebaseio.com",
+                projectId: "cse-201-project",
+                storageBucket: "cse-201-project.appspot.com",
+                messagingSenderId: "105143926651",
+                appId: "1:105143926651:web:996ec825feb3f5bb4b87de",
+                measurementId: "G-6RMK1WGRZ0"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        
+
+            </script>
+        <script src="js/Person.js"></script>
+        <script src="js/User.js"></script>
+        <script src="js/Genre.js"></script>
+        <script src="js/Director.js"></script>
+        <script src="js/Movie.js"></script>
+        <script src="js/Actor/Actor.js"></script>
+        <script src="js/Firebase/FirebaseManager.js"></script>
+
+        <!-- Favicons -->
+        <link href="img/favicon.png" rel="icon">
+        <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Raleway:400,700&display=swap"
+            rel="stylesheet">
+
+        <!-- Bootstrap CSS File -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+        <link href="vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+        <link href="vendor/aos/aos.css" rel="stylesheet">
+        <link href="vendor/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+            <div class="container py-2 py-md-5">
+              <div class="row align-items-start">
+                <div class="col-md-2">
+                  <ul class="custom-menu">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a>Movies</a></li>
+                    <li><a>Actors</a></li>
+                    <li><a>Upcoming Festivals</a></li>
+                    <li class="active"><a href="login.html">Login</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-6 d-none d-md-block  mr-auto">
+                  <div class="tweet d-flex">
+        
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <nav class="navbar navbar-light custom-navbar">
+            <div class="container">
+              <a class="navbar-brand" href="index.html">FilmHub.</a>
+        
+              <a href="#" class="burger" data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+              </a>
+        
+            </div>
+          </nav>
+          <div style="text-align: center;">
+            <h2>Admin Page</h2><br><br>
+            <h3>Add Movie to Genre</h3><br>
+            <label for="title">Movie Name:</label>
+            <input id="title" type="text"><br>
+            <label for="genre">Genre Name:</label>
+            <input id="genre" type="text"><br>
+            <button onclick="addToGenre()">Add to Genre</button><br><br>
+            <script>
+                function addToGenre() {
+                    this.movie = document.getElementById("title").value;//values taken from text input fields
+                    this.genre = document.getElementById("genre").value;
+
+                    FirebaseManager.isGenre(genre).then(function(isGenre) {
+                      if(isGenre) {
+                        FirebaseManager.isMovie(movie).then(function(isMovie) {
+                          if(isMovie) {
+                            FirebaseManager.addMovieToGenre(movie, genre).then(function(success) {
+                              if(success) {
+                                window.alert("Movie added successfully");//if all conditions are met, let user know the function succeeded
+                              } else {
+                                window.alert("This movie is already in the selection")
+                              }
+                            }) 
+                          } else {
+                            window.alert("ERROR: Movie or genre name not in database")
+                          }
+                        })
+                      } else {
+                         window.alert("ERROR: Movie or genre name not in database")
+                      }
+                    }).catch(function(error) {
+                      window.alert(error.message)
+                    })
+                }
+              </script>
+
+            <h2>Movie Requests</h2>
+            <table id="movieRequestTable" class="movieRequestTable">
+              <tr id = "movieRequestHeader" class="movieRequestHeader"> 
+                <td>Title</td>
+                <td>Actors</td>
+                <td>Director</td>
+                <td>Date</td>
+                <td>Poster Image Link</td>
+                <td>Accept</td>
+                <td>Decline</td>
+              </tr>
+            </table>
+            <script>
+              this.table = document.getElementById('movieRequestTable')
+
+              
+
+              FirebaseManager.loadMovieRequests().then(function(movies) {
+                
+                var createAcceptHandler = function(movie) {
+                  return function() {
+                    FirebaseManager.addNewMovie(movie).then(function(success) {
+                      if(success) {
+                        FirebaseManager.removeMovieFromRequestList(movie.getTitle()).then(function(success) {
+                          if(success) {
+                            window.location.replace('add-to-genre.html')
+                          } else {
+                            window.alert("Unable to remove the movie in the request list")
+                          }
+                        })
+
+                      } else {
+                        window.alert("There was an issue adding the movie to the database, please try again later")
+                      }
+                    })
+                    
+                  }
+                }
+
+                var createDeclineHandler = function(movie) {
+                  return function() {
+                        FirebaseManager.removeMovieFromRequestList(movie.getTitle()).then(function(success) {
+                          if(success) {
+                            window.location.replace('add-to-genre.html')
+                          } else {
+                            window.alert("Unable to remove the movie in the request list")
+                          }
+                        })
+                    }
+                }
+                
+
+                for(var i = 0; i < movies.length; i++) {
+                  let row = document.createElement('tr')
+                  row.id = "movieRequestRow"
+                  row.className = "movieRequestRow"
+                  var movieInfo = movies[i]
+                  let title = document.createElement('td')
+                  title.appendChild(document.createTextNode(movieInfo.getTitle()))
+
+                  let actor = document.createElement('td')
+                  var actorString = ""
+                  var actors = movieInfo.getActor()
+                  for(var i2 = 0; i2 < actors.length; i2++) {
+                     actorString += actors[i2].name + ", "
+                  }
+                  console.log(actors)
+                  actor.appendChild(document.createTextNode(actorString.substring(0, actorString.length-2)))
+
+                  let date = document.createElement('td')
+                  date.appendChild(document.createTextNode(movieInfo.getRelease()))
+                  let director = document.createElement('td')
+                  director.appendChild(document.createTextNode(movieInfo.getDirector().getName()))
+                  let poster = document.createElement('td')
+                  poster.appendChild(document.createTextNode(movieInfo.getPoster()))
+
+                  let accept = document.createElement('td')
+                  let button = document.createElement('button')
+                  button.innerHTML = "Accept"
+                  accept.appendChild(button)
+                  button.onclick = createAcceptHandler(movieInfo)
+
+                  let decline = document.createElement('td')
+                  let declineButton = document.createElement('button')
+                  declineButton.innerHTML = "Decline"
+                  decline.appendChild(declineButton)
+                  declineButton.onclick = createDeclineHandler(movieInfo)
+
+                  row.appendChild(title)
+                  row.appendChild(actor)
+                  row.appendChild(director)
+                  row.appendChild(date)
+                  row.appendChild(poster)
+                  row.appendChild(button)
+                  row.appendChild(decline)
+
+                  table.appendChild(row)
+                  
+                }
+           
+              })
+
+            </script>
+          </div>
+    </body>
+</html>
