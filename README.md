@@ -2,7 +2,7 @@
 This project was created with the intention of being a database for movies and films where users can browse these films by different search criteria in an interesting and meaningful way to learn more about specific films.
 
 # My Contribution
-My contribution to this project was the front-end work using Javascript, HTML, and CSS. We did use a website template for a basis to work off of, but everything other than the template is my own code. I also contributed in scraping data including movie titles, images, descriptions, genres, etc.. from IMDB using Python and Selenium.
+My contribution to this project was the front-end work using Javascript, HTML, and CSS. We did use a website template for a basis to work off of, but everything other than the template is my own code. I also contributed in scraping data including movie titles, images, descriptions, genres, etc.. from IMDB using Python and Selenium (This script is not included in this repo)
 
 # Images and Descriptions
 - This image shows off the home screen which displays all the different categories that our website allows you to search by. All categories displays every type of data on the site.
